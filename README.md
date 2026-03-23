@@ -14,12 +14,6 @@ A machine learning–based web application that predicts a student's stress leve
 
 ---
 
-## 🖼️ Preview
-
-![App Screenshot](./assets/screenshot.png)
-
----
-
 ## 🏗️ Project Structure
 
 ```
@@ -119,36 +113,9 @@ python app.py
 }
 ```
 
----
+--- 
 
-## ⚠️ Common Issues & Fixes
-
-### ❌ Error: `ModuleNotFoundError: No module named 'flask_cors'`
-
-✅ Fix:
-
-```bash
-pip install flask-cors
-```
-
----
-
-### ❌ Error: `POST http://127.0.0.1:5000/predict net::ERR_FAILED`
-
-✅ Check:
-
-- Flask server is running
-- Correct port (`5000`)
-- CORS enabled in backend:
-
-```python
-from flask_cors import CORS
-CORS(app)
-```
-
----
-
-## 📈 Future Improvements
+Future Improvements
 
 - Add more features (e.g., screen time, exercise)
 - Improve model accuracy with larger dataset
