@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 6%;
+    --foreground: 210 30% 92%;
+
+    --card: 240 15% 11%;
+    --card-foreground: 210 30% 92%;
+
+    --popover: 240 15% 11%;
+    --popover-foreground: 210 30% 92%;
+
+    --primary: 170 90% 50%;
+    --primary-foreground: 240 20% 6%;
+
+    --secondary: 240 12% 16%;
+    --secondary-foreground: 210 30% 85%;
+
+    --muted: 240 10% 18%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 340 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 12% 20%;
+    --input: 240 12% 20%;
+    --ring: 170 90% 50%;
+
+    --radius: 0.75rem;
+
+    --stress-low: 160 80% 55%;
+    --stress-moderate: 45 100% 58%;
+    --stress-high: 0 85% 60%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-space {
+    background: 
+      radial-gradient(ellipse at 20% 50%, hsl(260 60% 12% / 0.8) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(200 50% 8% / 0.6) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 80%, hsl(340 40% 8% / 0.5) 0%, transparent 45%),
+      linear-gradient(180deg, hsl(240 25% 5%) 0%, hsl(260 20% 8%) 40%, hsl(240 15% 4%) 100%);
+  }
+
+  .stars {
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, hsl(0 0% 100% / 0.6), transparent),
+      radial-gradient(1px 1px at 25% 35%, hsl(0 0% 100% / 0.4), transparent),
+      radial-gradient(1.5px 1.5px at 40% 10%, hsl(0 0% 100% / 0.7), transparent),
+      radial-gradient(1px 1px at 55% 45%, hsl(0 0% 100% / 0.3), transparent),
+      radial-gradient(1px 1px at 70% 20%, hsl(0 0% 100% / 0.5), transparent),
+      radial-gradient(1.5px 1.5px at 85% 60%, hsl(0 0% 100% / 0.6), transparent),
+      radial-gradient(1px 1px at 15% 70%, hsl(0 0% 100% / 0.4), transparent),
+      radial-gradient(1px 1px at 90% 80%, hsl(0 0% 100% / 0.5), transparent),
+      radial-gradient(1px 1px at 50% 90%, hsl(0 0% 100% / 0.3), transparent),
+      radial-gradient(1.5px 1.5px at 35% 55%, hsl(0 0% 100% / 0.5), transparent),
+      radial-gradient(1px 1px at 65% 75%, hsl(0 0% 100% / 0.4), transparent),
+      radial-gradient(1px 1px at 5% 50%, hsl(0 0% 100% / 0.3), transparent),
+      radial-gradient(1px 1px at 78% 42%, hsl(0 0% 100% / 0.5), transparent),
+      radial-gradient(1.5px 1.5px at 45% 25%, hsl(170 80% 60% / 0.3), transparent),
+      radial-gradient(1px 1px at 92% 12%, hsl(340 70% 60% / 0.3), transparent);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
